@@ -1,12 +1,13 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
-from bottle import run, post
+from bottle import run, post, request
 import os
 
 @post('/contact')
 def contact():
-    return 'Hello World!'
+	name = request.get('text')
+    return 'Hello' + name
 
 port = int(os.environ.get('PORT', 5000))
 

@@ -1,7 +1,6 @@
 
 import os
 from flask import Flask, request, Response
-import wikipedia
 
 app = Flask(__name__)
 

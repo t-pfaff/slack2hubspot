@@ -9,9 +9,9 @@ SLACKPEDIA_BOT_DEBUG = False
 @app.route('/contact', methods=['post'])
 def contact():
     query = request.values.get('text')
-    result = get_query_result(query)
+    #result = get_query_result(query)
 
-    return 'Hello' + name
+    return 'Hello' + query
     #Response(result, content_type='charset=utf-8; text/plain')
 
 

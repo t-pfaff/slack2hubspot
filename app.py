@@ -1,15 +1,21 @@
-#!/usr/bin/env python
-# encoding: utf-8
 
-from bottle import run, post, request
 import os
+from flask import Flask, request, Response
+import wikipedia
 
-@post('/contact')
+app = Flask(__name__)
+
+SLACKPEDIA_BOT_DEBUG = False
+
+@app.route('/contact', methods=['post'])
 def contact():
-    name = request.get('text')
+    query = request.values.get('text')
+    result = get_query_result(query)
+
     return 'Hello' + name
+    #Response(result, content_type='charset=utf-8; text/plain')
 
-port = int(os.environ.get('PORT', 5000))
 
-if __name__ == '__main__':
-    run(host='0.0.0.0', port=port)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port, debug=SLACKPEDIA_BOT_DEBUG)

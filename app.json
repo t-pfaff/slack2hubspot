@@ -1,6 +1,0 @@
-{
-  "name": "slack2hubspot",
-  "description": "Custom command",
-  "repository": "https://github.com/t-pfaff/slack2hubspot",
-  "keywords": ["python", "slack", "hubspot"]
-}

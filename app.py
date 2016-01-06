@@ -3,8 +3,8 @@
 
 from bottle import run, post
 
-@post('/hello')
-def hello():
+@post('/contact')
+def contact():
     return 'Hello World!'
 
 if __name__ == '__main__':
